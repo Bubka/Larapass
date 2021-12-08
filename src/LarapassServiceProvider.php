@@ -205,6 +205,10 @@ class LarapassServiceProvider extends ServiceProvider
                     }
                 }
 
+                if ($login_verify = $config->get('larapass.login_verify')) {
+                    $selection->setUserVerification($login_verify);
+                }
+
                 return $selection;
             }
         );
