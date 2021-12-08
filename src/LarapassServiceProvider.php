@@ -200,6 +200,7 @@ class LarapassServiceProvider extends ServiceProvider
 
                 if ($userless = $config->get('larapass.userless')) {
                     $selection->setResidentKey($userless);
+                    $userless == 'required' ?? $selection->setRequireResidentKey(true);
                 }
 
                 return $selection;
